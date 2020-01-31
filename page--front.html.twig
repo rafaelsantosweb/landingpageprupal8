@@ -1,0 +1,101 @@
+{% include '@pucsp/../header.html.twig' %}
+
+{% if page.slideshow %}
+                {{ page.slideshow }}
+{% endif %}
+
+<section class="{{main_grid_class}}">
+
+    <!-- #main -->
+    <div id="main" class="clearfix">
+
+        <!-- EOF:#content-wrapper -->
+        <div id="content-wrapper">
+        <div class="container">
+
+            {% if page.content %}
+                {{ page.content }}
+            {% endif %}
+        </div>
+        </div>
+        <!-- EOF:#content-wrapper -->
+    </div>
+    <!-- EOF:#main -->
+</section>    
+
+<!-- #page -->
+<div id="page" class="clearfix">
+
+    <div id="main-content">
+        <div class="container">
+        
+            <div class="row">
+
+                <div class="col-md-3">
+                    {% if page.sidebar_first %}
+                    <aside class="{{sidebar_grid_class}}">  
+                        <!--#sidebar-first-->
+                        <section id="sidebar-first" class="sidebar clearfix">
+                        {{ page.sidebar_first }}
+                        </section>
+                        <!--EOF:#sidebar-first-->
+                    </aside>
+                    {% endif %}
+                </div>
+
+                 <div class="col-md-9">
+                   
+                    {% if page.sidebar_second %}
+                    <aside class="{{sidebar_grid_class}}">
+                        <!--#sidebar-second-->
+                        <section id="sidebar-second" class="sidebar clearfix">
+                        {{ page.sidebar_second }}
+                        </section>
+                        <!--EOF:#sidebar-second-->
+                    </aside>
+                    {% endif %}                
+                </div>
+                   
+                    
+            </div>
+        </div>
+    </div>
+   
+{% if page.pre_content_first or page.pre_content_second or page.pre_content_third %}
+    <div id="pre-content" class="clearfix">
+        <div class="container">
+
+            <div id="pre-content-inside" class="clearfix">
+                <div class="row">
+                    <div class="col-md-3">
+                        {% if page.pre_content_first %}
+                        <div class="pre-header-area">
+                        {{ page.pre_content_first }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-6">
+                        {% if page.pre_content_second %}
+                        <div class="pre-header-area">
+                        {{ page.pre_content_second }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-3">
+                        {% if page.pre_content_third %}
+
+                        <div class="pre-header-area">
+                        {{ page.pre_content_third }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endif %}
+
+{% include '@pucsp/../footer.html.twig' %}

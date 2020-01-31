@@ -1,0 +1,15 @@
+landingpages_puc.page_front:
+  path: '/home'
+  defaults:
+    _controller:  '\Drupal\landingpages_puc\Controller\landingpagesController::front'
+    _title:  'Home'
+  requirements:
+    _permission:  'access content'
+
+test.form:
+  path: '/test-form'
+  defaults:
+    _title: 'Example form'
+    _form: '\Drupal\landingpages_puc\Form\Login'
+  requirements:
+    _permission: 'access content'
